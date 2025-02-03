@@ -46,6 +46,3 @@ bwa-mem2 mem -t 7 -R ${RG} ${INDEX} ${SAMPDIR}/${SAMPLE}_trim.1.fq.gz $SAMPDIR/$
 # index alignment file
 samtools index ${OUTDIR}/${SAMPLE}.bam
 
-# get stats on alignment file
-samtools stats ${OUTDIR}/${SAMPLE}.bam >${OUTDIR}/${SAMPLE}.stats
-

@@ -56,3 +56,10 @@ cat \
 $OUTDIR/SN.txt \
 >$OUTDIR/SN2.txt && \
 	mv $OUTDIR/SN2.txt $OUTDIR/SN.txt
+
+# run multiQC
+
+module load MultiQC/1.9
+
+# run multiqc on fastqc output
+multiqc -f -o $OUTDIR/multiqc $OUTDIR
