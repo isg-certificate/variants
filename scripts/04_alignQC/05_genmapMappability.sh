@@ -21,6 +21,9 @@ module load genmap/1.3.0
 INDEXDIR=../../results/04_alignQC/genmapindex
 
 OUTDIR=../../results/04_alignQC/genmapmappability
+mkdir -p ${OUTDIR}
+
+PREFIX=mappable
 
 # run mappability algorithm
-genmap map -K 30 -E 2 -I ${INDEXDIR} -O ${OUTDIR} -t -w -bg
+genmap map -K 30 -E 2 -I ${INDEXDIR} -O ${OUTDIR}/${PREFIX} -t -w -bg
