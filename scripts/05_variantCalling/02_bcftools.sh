@@ -33,4 +33,4 @@ GEN=../../genome/GRCh38_GIABv3_no_alt_analysis_set_maskedGRC_decoys_MAP2K3_KMT2C
 bcftools mpileup -f ${GEN} -b ${INDIR}/bam_list.txt -q 20 -Q 30 | bcftools call -m -v -Oz -o ${OUTDIR}/bcftools.vcf.gz 
 
 # index vcf
-tabix -p vcf ${INDIR}/bcftools.vcf.gz
+tabix -p vcf ${OUTDIR}/bcftools.vcf.gz

@@ -25,10 +25,10 @@ module load htslib/1.16
 INDIR=../../results/03_Alignment/bwa_align/
 
 OUTDIR=../../results/05_variantCalling/freebayes
-mkdir -p $OUTDIR 
+mkdir -p ${OUTDIR} 
 
 # make a list of bam files
-ls $INDIR/*.bam >$INDIR/bam_list.txt
+ls ${INDIR}/*.bam >${INDIR}/bam_list.txt
 
 # set a variable for the reference genome location
 GEN=../../genome/GRCh38_GIABv3_no_alt_analysis_set_maskedGRC_decoys_MAP2K3_KMT2C_KCNJ18.fasta
@@ -36,9 +36,9 @@ GEN=../../genome/GRCh38_GIABv3_no_alt_analysis_set_maskedGRC_decoys_MAP2K3_KMT2C
 # run freebayes
 freebayes \
 -f $GEN \
---bam-list $INDIR/bam_list.txt |
-bgzip -c >$OUTDIR/freebayes.vcf.gz
+--bam-list ${INDIR}/bam_list.txt |
+bgzip -c >${OUTDIR}/freebayes.vcf.gz
 
-tabix -p vcf $OUTDIR/freebayes.vcf.gz
+tabix -p vcf ${OUTDIR}/freebayes.vcf.gz
 
 date
