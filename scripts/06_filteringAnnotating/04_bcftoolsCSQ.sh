@@ -15,7 +15,7 @@ hostname
 date
 
 module load htslib/1.7
-module load bcftools/1.6
+module load bcftools/1.20
 
 # make a directory if it doesn't exist
 INDIR=../../results/05_variantCalling/freebayes/
@@ -38,5 +38,5 @@ sed -i 's/^20/chr20/' ${OUTDIR}/Homo_sapiens.GRCh38.113.chromosome.20.gff3
 
 GFF=${OUTDIR}/Homo_sapiens.GRCh38.113.chromosome.20.gff3
 
-
+# run bcftools csq
 bcftools csq --phase a -f ${GENOME} -g ${GFF} ${VCFIN} -Oz -o ${VCFOUT}
