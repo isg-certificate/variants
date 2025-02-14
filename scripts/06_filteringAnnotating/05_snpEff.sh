@@ -35,6 +35,6 @@ VCFANN=freebayes_annotated.vcf.gz
 # the default directory cannot be written to by users
 # apparently snpEff wants an absolute file path. 
 
-java -Xmx8G -jar ${SNPEFF} eff -dataDir $(pwd)/${OUTDIR}/snpeff_data hg38 $VCF | bgzip -c >${VCFANN}
+java -Xmx8G -jar ${SNPEFF} eff -dataDir $(pwd)/snpeff_data hg38 $VCFIN | bgzip -c >${VCFANN}
 	
 tabix -p vcf ${VCFANN}
